@@ -2,8 +2,7 @@
 
 @import "tailwindcss";
 
-@layer components {
-}
+@custom-variant dark (&:where(.dark, .dark *));
 
 * {
   font-family: "Inter", sans-serif;
