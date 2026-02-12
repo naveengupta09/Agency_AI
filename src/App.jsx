@@ -21,12 +21,12 @@ const App = () => {
   const position = useRef({x: 0, y: 0})
 
   useEffect(()=>{
+    let frameId
+
     const handleMouseMove = (e)=>{
       mouse.current.x = e.clientX
       mouse.current.y = e.clientY
     }
-
-    document.addEventListener('mousemove', handleMouseMove)
 
     const animate = () =>{
       position.current.x += (mouse.current.x - position.current.x) * 0.1
@@ -36,12 +36,17 @@ const App = () => {
         dotRef.current.style.transform = `translate3d(${mouse.current.x - 6}px, ${mouse.current.y - 6}px, 0)`
         outlineRef.current.style.transform = `translate3d(${position.current.x - 20}px, ${position.current.y - 20}px, 0)`
       }
-      requestAnimationFrame(animate)
+      frameId = requestAnimationFrame(animate)
     }
-    animate()
+
+    document.addEventListener('mousemove', handleMouseMove)
+    frameId = requestAnimationFrame(animate)
 
     return ()=>{
       document.removeEventListener('mousemove', handleMouseMove)
+      if (frameId) {
+        cancelAnimationFrame(frameId)
+      }
     }
   },[])
 
