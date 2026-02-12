@@ -32,22 +32,22 @@ const Footer = ({ theme }) => {
 
           <ul className="flex gap-8">
             <li>
-              <a className="hover:text-primary" href="#hero">
+              <a className="relative inline-flex items-center transition-all duration-300 hover:-translate-y-0.5 hover:text-primary dark:hover:text-teal-300 after:absolute after:-bottom-1 after:left-0 after:h-[2px] after:w-0 after:rounded-full after:bg-primary after:transition-all after:duration-300 hover:after:w-full" href="#hero">
                 Home
               </a>
             </li>
             <li>
-              <a className="hover:text-primary" href="#services">
+              <a className="relative inline-flex items-center transition-all duration-300 hover:-translate-y-0.5 hover:text-primary dark:hover:text-teal-300 after:absolute after:-bottom-1 after:left-0 after:h-[2px] after:w-0 after:rounded-full after:bg-primary after:transition-all after:duration-300 hover:after:w-full" href="#services">
                 Services
               </a>
             </li>
             <li>
-              <a className="hover:text-primary" href="#our-work">
+              <a className="relative inline-flex items-center transition-all duration-300 hover:-translate-y-0.5 hover:text-primary dark:hover:text-teal-300 after:absolute after:-bottom-1 after:left-0 after:h-[2px] after:w-0 after:rounded-full after:bg-primary after:transition-all after:duration-300 hover:after:w-full" href="#our-work">
                 Our Work
               </a>
             </li>
             <li>
-              <a className="hover:text-primary" href="#contact-us">
+              <a className="relative inline-flex items-center transition-all duration-300 hover:-translate-y-0.5 hover:text-primary dark:hover:text-teal-300 after:absolute after:-bottom-1 after:left-0 after:h-[2px] after:w-0 after:rounded-full after:bg-primary after:transition-all after:duration-300 hover:after:w-full" href="#contact-us">
                 Contact Us
               </a>
             </li>
@@ -71,8 +71,12 @@ const Footer = ({ theme }) => {
               placeholder="Enter your email"
               className="w-full p-3 text-sm outline-none rounded dark:text-gray-200 bg-transparent border border-gray-300 dark:border-gray-50"
             />
-            <button className="bg-primary text-white rounded px-6">
-              Subscribe
+            <button className="group relative inline-flex items-center gap-2 overflow-hidden rounded px-6 py-3 bg-gradient-to-r from-indigo-500 via-fuchsia-500 to-rose-500 text-white shadow-[0_12px_26px_rgba(79,70,229,0.4)] ring-1 ring-white/35 transition-all duration-300 hover:-translate-y-0.5 hover:scale-[1.03] hover:brightness-110">
+              <span className="absolute inset-0 -translate-x-full bg-gradient-to-r from-white/0 via-white/25 to-white/0 transition-transform duration-700 group-hover:translate-x-full" />
+              <span className="relative">Subscribe</span>
+              <span className="relative inline-flex items-center justify-center size-6 rounded-full bg-white/25 ring-1 ring-white/35 shadow-[0_0_10px_rgba(255,255,255,0.35)] transition-transform duration-300 group-hover:translate-x-0.5">
+                <img src={assets.arrow_icon} className="w-3.5 h-3.5" alt="" />
+              </span>
             </button>
           </div>
         </motion.div>

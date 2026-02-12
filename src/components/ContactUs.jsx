@@ -91,9 +91,10 @@ const ContactUs = () => {
 
         <button
           type="submit"
-          className="w-max flex gap-2 bg-primary text-white text-sm px-10 py-3 rounded-full cursor-pointer hover:scale-103 transition-all"
+          className="group w-max inline-flex items-center gap-2 rounded-full px-10 py-3 text-sm text-white bg-gradient-to-r from-rose-500 via-fuchsia-500 to-indigo-500 shadow-[0_12px_26px_rgba(225,29,72,0.35)] ring-1 ring-white/30 transition-all duration-300 hover:-translate-y-0.5 hover:scale-[1.03] hover:brightness-110"
         >
-          Submit <img src={assets.arrow_icon} alt="" className="w-4" />
+          <span>Submit</span>
+          <img src={assets.arrow_icon} alt="" className="w-4 transition-transform duration-300 group-hover:translate-x-0.5" />
         </button>
       </motion.form>
     </motion.div>
